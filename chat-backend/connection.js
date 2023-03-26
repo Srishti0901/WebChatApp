@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 require('dotenv').config();
 
-mongoose.connect('mongodb://localhost:27017/chatApp', {
+mongoose.connect('mongodb+srv://AtlasS:AtlasS123@cluster0.fnvbswe.mongodb.net/?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     family: 4,
