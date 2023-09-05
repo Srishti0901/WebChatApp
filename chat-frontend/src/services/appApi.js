@@ -3,8 +3,8 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 const appApi = createApi({
   reducerPath: "appApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://localhost:5001",
-    // baseUrl: 'https://webchatapplication-qv7w.onrender.com',
+    // baseUrl: "http://localhost:5001",
+    baseUrl: "https://webchatapplication-qv7w.onrender.com",
   }),
 
   endpoints: (builder) => ({
