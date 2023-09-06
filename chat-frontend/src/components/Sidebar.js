@@ -38,14 +38,23 @@ function Sidebar() {
     if (currentRoom !== room) dispatch(addNotifications(room));
   });
 
+  // useEffect(() => {
+  //   if (user) {
+  //     setCurrentRoom("general");
+  //     getRooms();
+  //     socket.emit("join-room", "general");
+  //     socket.emit("new-user");
+  //   }
+  // }, [socket]);
   useEffect(() => {
-    if (user) {
-      setCurrentRoom("general");
-      getRooms();
-      socket.emit("join-room", "general");
-      socket.emit("new-user");
-    }
-  }, [socket]);
+  if (user) {
+    setCurrentRoom("general");
+    getRooms();
+    socket.emit("join-room", "general");
+    socket.emit("new-user");
+  }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, [socket]);
 
   socket.off("new-user").on("new-user", (payload) => {
     setMembers(payload);
